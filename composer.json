@@ -1,0 +1,20 @@
+{
+    "name": "jcoronel/tienda-virtual-mvc",
+    "description": "Proyecto Tienda Virtual MVC",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models",
+            "Clases\\" : "./clases"
+        }
+    },
+    "authors": [
+        {
+            "name": "jefcoro02",
+            "email": "jefcoronel2@gmail.com"
+        }
+    ],
+    "require": {}
+}

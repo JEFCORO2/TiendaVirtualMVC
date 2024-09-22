@@ -1,0 +1,27 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-app{
+    @include m.tablet {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr); //Mitada y mitad, para la imagen y la otra para el formulario
+        min-height: 100vh; //altura minima
+    }
+
+    .imagen {
+        height: 20rem;
+        background-image: url(../img/1.jpg);
+        background-size: cover;
+        background-position: center center;
+
+        @include m.tablet{
+            height: auto;
+        }
+    }
+
+    .app {
+        width: 95%;  // 95% de lo que tiene definido, para que no ocupe el 100% , osea no se vaya hasta arriba
+        margin: 0 auto; //centrado
+        padding: 3rem 0;
+    }
+}
