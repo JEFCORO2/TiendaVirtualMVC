@@ -145,6 +145,25 @@ class ActiveRecord {
         //cambiarFormato($resultado);
     }
 
+    // Paginar los registros
+    public static function paginar($por_pagina, $offset) {
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC LIMIT ${por_pagina} OFFSET ${offset} " ;
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+    // Traer un total de registros
+    public static function total($columna = '', $valor = '') {
+        $query = "SELECT COUNT(*) FROM " . static::$tabla;
+        if($columna) {
+            $query .= " WHERE ${columna} = ${valor}";
+        }
+        $resultado = self::$db->query($query);
+        $total = $resultado->fetch_array();
+
+        return array_shift($total);
+    }
+
     public static function consultarSQL($query){
         //CONSULTAR LA BASE DE DATOS
         $resultado = self::$db->query($query);
