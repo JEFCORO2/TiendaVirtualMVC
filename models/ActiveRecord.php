@@ -145,6 +145,14 @@ class ActiveRecord {
         //cambiarFormato($resultado);
     }
 
+    public static function listarCategoria($categoria){
+        $query = "SELECT * FROM " . static::$tabla . " WHERE id_categoria = '$categoria' LIMIT 6";
+
+        $resultado = self :: consultarSQL($query);
+
+        return $resultado;
+    }
+
     // Paginar los registros
     public static function paginar($por_pagina, $offset) {
         $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC LIMIT ${por_pagina} OFFSET ${offset} " ;

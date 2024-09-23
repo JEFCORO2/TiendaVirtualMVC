@@ -36,7 +36,23 @@
         }
 
         public static function producto(Router $router){
-            $router->mostrarVistas('pruebas/single');
+            //validar que sea un entero y que no sea inyeccion sql
+            $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
+
+            if($id){
+                $producto = Producto::where('id', $id);
+
+                //listar productos por categorias
+                $productosCategorias = Producto::listarCategoria($producto->id_categoria);
+
+            }else {
+                header('Location: /');
+            }
+
+            $router->mostrarVistas('pruebas/single', [
+                'producto' => $producto,
+                'productosCategoria' => $productosCategorias
+            ]);
         }
     }  
 ?>
