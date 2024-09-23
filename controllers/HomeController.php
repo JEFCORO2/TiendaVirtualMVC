@@ -9,7 +9,7 @@
         public static function listar(Router $router){
             $categorias = Categoria::listar();
 
-            $router->mostrarVistas('index',[
+            $router->mostrarVistas('pruebas/index',[
                 'categorias' => $categorias
             ]);
         }

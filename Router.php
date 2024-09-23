@@ -44,9 +44,9 @@ class Router {
         
         include __DIR__ . "/views/$vista.php";
 
-        //$contenido = ob_get_clean();
+        $contenido = ob_get_clean();
 
-        //include __DIR__ . "/views/layout.php";
+        include __DIR__ . "/views/layout.php";
     }
 }
 
