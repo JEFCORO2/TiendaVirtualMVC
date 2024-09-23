@@ -34,5 +34,9 @@
                 'paginacion' => $paginacion->paginacion()
             ]);
         }
+
+        public static function producto(Router $router){
+            $router->mostrarVistas('pruebas/single');
+        }
     }  
 ?>
