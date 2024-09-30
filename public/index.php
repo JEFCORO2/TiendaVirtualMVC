@@ -11,8 +11,14 @@ $router = new Router();
 
 //INICIAR SESION
 $router->get('/', [HomeController::class, 'listar']);
+$router->get('/login', [LoginController::class, 'login']);
+$router->post('/iniciar', [LoginController::class, 'store']);
+
+$router->get('/contacto', [HomeController::class, 'contacto']);
 $router->get('/tienda', [TiendaController::class, 'listar']);
 $router->get('/tienda/producto', [TiendaController::class, 'producto']);
+$router->get('/tienda/deseo', [TiendaController::class, 'deseo']);
+
 $router->get('/about', [LoginController::class, 'about']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador

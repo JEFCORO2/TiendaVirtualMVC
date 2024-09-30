@@ -13,6 +13,10 @@
                 'categorias' => $categorias
             ]);
         }
+
+        public static function contacto(Router $router){
+            $router->mostrarVistas('pruebas/contact');
+        }
     }
 
 ?>

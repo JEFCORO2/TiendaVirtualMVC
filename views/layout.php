@@ -30,6 +30,8 @@
     <script src="../build/js/bootstrap.bundle.min.js"></script>
     <script src="../build/js/templatemo.js"></script>
     <script src="../build/js/custom.js"></script>
+    <script src="../build/js/sweetalert2.all.min.js"></script>
+    <script src="../build/js/carrito.js"></script>
     <!-- Fin Script -->
 </body>
 

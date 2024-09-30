@@ -17,6 +17,7 @@
             }
             $registros_por_pagina = 6;
             $total = Producto::total();
+
             $paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total);
 
             if($paginacion->total_paginas() < $pagina_actual) {
@@ -53,6 +54,12 @@
                 'producto' => $producto,
                 'productosCategoria' => $productosCategorias
             ]);
+        }
+
+        public static function deseo(Router $router){
+            $router->mostrarVistas('pruebas/deseo');
+
+            //obtener prodcutos a partir de la lista de deseps
         }
     }  
 ?>

@@ -192,7 +192,7 @@
 <section class="py-5">
     <div class="container">
         <div class="row text-left p-2 pb-3">
-            <h4>Priductos Relacionados</h4>
+            <h4>Productos Relacionados</h4>
         </div>
 
         <!--Start Carousel Wrapper-->
