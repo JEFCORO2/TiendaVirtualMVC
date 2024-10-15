@@ -17,6 +17,9 @@ $router->post('/iniciar', [LoginController::class, 'store']);
 $router->get('/contacto', [HomeController::class, 'contacto']);
 $router->get('/tienda', [TiendaController::class, 'listar']);
 $router->get('/tienda/producto', [TiendaController::class, 'producto']);
+
+$router->post('/tienda/recibirCarrito', [TiendaController::class, 'recibirCarrito']);
+
 $router->get('/tienda/deseo', [TiendaController::class, 'deseo']);
 
 $router->get('/about', [LoginController::class, 'about']);

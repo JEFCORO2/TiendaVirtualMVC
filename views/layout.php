@@ -16,14 +16,20 @@
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="../build/css/fontawesome.min.css">
+    <script
+            src="https://www.paypal.com/sdk/js?client-id=AcbIF2Q6Me5KBIg-KxtByIoEkpZDz6_aMkLQSCXHon6zKCPJpwiish7oLDDlAx0DVFZ02B0Fp4MkhZPd&buyer-country=US&currency=USD&components=buttons&enable-funding=venmo,paylater,card"
+            data-sdk-integration-source="developer-studio"
+    ></script>
 </head>
 
 <body>
     <?php 
         include_once __DIR__ .'/templates/header.php';
         echo $contenido;
-        include_once __DIR__ .'/templates/footer.php'; 
+        include_once __DIR__ .'/templates/footer.php';
+        
     ?>
+
     <!-- Inicio Script -->
     <script src="../build/js/jquery-1.11.0.min.js"></script>
     <script src="../build/js/jquery-migrate-1.2.1.min.js"></script>
@@ -32,6 +38,8 @@
     <script src="../build/js/custom.js"></script>
     <script src="../build/js/sweetalert2.all.min.js"></script>
     <script src="../build/js/carrito.js"></script>
+
+    <script src="../build/js/paypal.js"></script>
     <!-- Fin Script -->
 </body>
 

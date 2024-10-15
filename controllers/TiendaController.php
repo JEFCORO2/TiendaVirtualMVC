@@ -56,10 +56,28 @@
             ]);
         }
 
-        public static function deseo(Router $router){
-            $router->mostrarVistas('pruebas/deseo');
-
-            //obtener prodcutos a partir de la lista de deseps
+        public static function recibirCarrito() {
+            session_start(); // Asegúrate de que la sesión esté iniciada
+        
+            // Obtener los datos del carrito enviados desde JavaScript
+            $datos = json_decode(file_get_contents('php://input'), true);
+        
+            if (isset($datos['carrito'])) {
+                $_SESSION['carrito'] = $datos['carrito'];
+        
+                // Retornar una respuesta JSON para confirmar
+                header('Content-Type: application/json'); // Asegúrate de establecer el tipo de contenido
+                echo json_encode(['status' => 'success', 'message' => 'Carrito recibido', 'carrito' => $_SESSION['carrito']]);
+            } else {
+                header('Content-Type: application/json'); // Asegúrate de establecer el tipo de contenido
+                echo json_encode(['status' => 'error', 'message' => 'No se recibió ningún carrito']);
+            }
         }
+
+        public static function deseo(Router $router){
+
+            $router->mostrarVistas('pruebas/deseo');
+        }
+
     }  
 ?>

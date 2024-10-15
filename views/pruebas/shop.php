@@ -58,7 +58,15 @@
                                         <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                             <ul class="list-unstyled">
                                                 <li><a class="btn btn-success text-white btnAddDeseo" prod="<?php echo $producto->id ?>" href="#" ><i class="far fa-heart"></i></a></li>
-                                                <li><a class="btn btn-success text-white mt-2" href="tienda/producto?id=<?=$producto->id;?>"><i class="far fa-eye"></i></a></li>
+                                                <li><a class="btn btn-success text-white mt-2" href="tienda/producto?id=<?=$producto->id;?>"><i class="far fa-eye"></i></a></li>                                        
+                                                
+                                                <li>
+                                                    <a class="btn btn-success text-white mt-2 btnAddCarrito" data-id="<?php echo $producto->id ?>" 
+                                                    data-titulo="<?php echo $producto->titulo ?>" data-precio="<?php echo $producto->precio_normal ?>" href="#">
+                                                        <i class="fas fa-cart-plus"></i>
+                                                    </a>
+                                                </li>
+
                                                 <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
                                             </ul>
                                         </div>
@@ -209,5 +217,6 @@
     </div>
 </section>
 <!--End Brands-->
+
 
 

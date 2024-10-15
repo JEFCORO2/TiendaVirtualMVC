@@ -35,8 +35,8 @@ function agregarAlCarrito(event) {
         });
         Swal.fire({
             title: "Aviso",
-            text: "La cantidad aumento",
-            icon: "success"
+            text: "Producto ya está en el carrito",
+            icon: "warning"
         });
     } else {
         carrito.push(producto);
@@ -73,13 +73,6 @@ function eliminarProducto(id) {
     carrito = carrito.filter(producto => producto.id !== id); // Eliminar producto por ID
 
     sessionStorage.setItem('carrito', JSON.stringify(carrito)); // Guardar el carrito actualizado
-    
-    // Eliminar visualmente el producto del DOM
-    const productoElemento = document.querySelector(`.productoCarrito[data-id="${id}"]`);
-    if (productoElemento) {
-        productoElemento.remove(); // Eliminar el elemento del DOM
-    }
-
     Swal.fire({
         title: "Producto eliminado",
         text: "El producto ha sido eliminado del carrito",
@@ -120,28 +113,10 @@ function enviarCarritoAlServidor() {
 // Función para mostrar el carrito actualizado (puedes personalizar esta función)
 function mostrarCarrito() {
     let carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
-    
-    // Selecciona el contenedor donde muestras los productos del carrito
-    const carritoContainer = document.getElementById('carritoContainer');
-    
-    // Limpia el contenido anterior del carrito
-    carritoContainer.innerHTML = '';
-    
-    // Si el carrito está vacío, muestra un mensaje
-    if (carrito.length === 0) {
-        carritoContainer.innerHTML = '<p>El carrito está vacío</p>';
-    } else {
-        carrito.forEach(producto => {
-            const productoElemento = `
-                <div class="productoCarrito">
-                    <span>${producto.titulo} - $${producto.precio} x ${producto.cantidad}</span>
-                    <button class="btnEliminarProducto" data-id="${producto.id}">Eliminar</button>
-                </div>`;
-            carritoContainer.innerHTML += productoElemento;
-        });
-    }
+    console.log("Carrito actualizado:", carrito);
+    // Aquí puedes actualizar la interfaz del carrito visualmente
 
-    // Recargar los eventos de los botones después de actualizar el carrito
+    // Recargar eventos de los botones al mostrar el carrito
     recargarEventosBotones();
 }
 
