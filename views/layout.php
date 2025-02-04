@@ -39,7 +39,7 @@
     <script src="../build/js/sweetalert2.all.min.js"></script>
     <script src="../build/js/carrito.js"></script>
 
-    <script src="../build/js/paypal.js"></script>
+    <!--     <script src="../build/js/paypal.js"></script> -->
     <!-- Fin Script -->
 </body>
 

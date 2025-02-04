@@ -35,8 +35,8 @@ function agregarAlCarrito(event) {
         });
         Swal.fire({
             title: "Aviso",
-            text: "Producto ya está en el carrito",
-            icon: "warning"
+            text: "La cantidad aumento",
+            icon: "success"
         });
     } else {
         carrito.push(producto);
