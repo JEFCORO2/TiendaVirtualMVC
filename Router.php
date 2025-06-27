@@ -16,41 +16,35 @@ class Router {
     }
 
     public function comprobarRutas(){
-        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
+        $urlActual = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); // ✅ más seguro
         $metodo = $_SERVER['REQUEST_METHOD'];
 
         if($metodo === 'GET'){
             $funcion = $this->rutasGET[$urlActual] ?? null;
-        }else{
+        } else {
             $funcion = $this->rutasPOST[$urlActual] ?? null;
         }
 
         if($funcion){
-            //La URL existe y hay una funcion asociada
-            call_user_func($funcion, $this); //->sirve para llamar una funcion cuando no sabemos el nombre de la funcion
-        }else {
-            echo "Pagina no encontrada....";
+            call_user_func($funcion, $this);
+        } else {
+            echo "Página no encontrada...";
         }
     }
 
     //Muestra una vista
-    public function mostrarVistas($vista, $datos = []){
-
-        foreach($datos as $key => $value){
+    public function mostrarVistas($vista, $datos = []) {
+        foreach ($datos as $key => $value) {
             $$key = $value;
         }
-        
-        ob_start();  //alamacena un almacenamiento en memoria , todo lo siguiente de esta linea lo va a guardar
 
-        if($vista == "admin/login"){
-            include __DIR__ . "/views/$vista.php";
-        }else{
-            
-            include __DIR__ . "/views/$vista.php";
+        // Incluir directamente la vista sin layout ni buffering
+        $rutaVista = __DIR__ . "/views/$vista.php";
 
-            $contenido = ob_get_clean();
-
-            include __DIR__ . "/views/layout.php";
+        if (file_exists($rutaVista)) {
+            include $rutaVista;
+        } else {
+            echo "Vista '$vista' no encontrada.";
         }
     }
 }

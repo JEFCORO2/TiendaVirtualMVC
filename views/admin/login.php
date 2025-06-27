@@ -1,88 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Log in</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Mulish&display=swap"
+            rel="stylesheet"
+            type='text/css'
+        >
+        <link rel="stylesheet" href="../build/css/auth.css" />
+        <link rel="stylesheet" href="../build/css/normalize.css"/>
+        <link rel="icon" href="img/logo.png" type="image/x-icon">
+        <title>Aforo-Comunal</title>
+    </head>
+    <body>
+        <div class="form-wrapper">
+            <div class="form-side">
+                <form class="my-form" id="form">
+                    <div class="form-welcome-row">
+                        <h1>Crea tu cuenta &#x1F44F;</h1>
+                    </div>
+                    <div class="socials-row">
+                        <a href="#" title="Use Google">
+                            <img src="../build/assets/google.png" alt="Google">Use Google
+                        </a>
+                        <a href="#" title="Use Apple">
+                            <img src="../build/assets/facebook.png" alt="Apple"> Use Facebook
+                        </a>
+                    </div>
+                    <div class="divider">
+                        <div class="divider-line"></div> Or <div class="divider-line"></div>
+                    </div>
+                    <div class="text-field">
+                        <label for="email">Email:
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="on"
+                                placeholder="Tu Email"
+                                required
+                            >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" 
+                                fill="none" stroke-linecap="round" stroke-linejoin="round"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                                <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path>
+                            </svg>
+                        </label>
+                    </div>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <link rel="stylesheet" href="<?php echo BASE_URL; ?>plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>dist/css/adminlte.min.css">
-</head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
-
-      <form action="../../index3.html" method="post">
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+                    <div class="text-field">
+                        <label for="password">Password:
+                            <input
+                                id="password"
+                                type="password"
+                                name="password"
+                                placeholder="Tu Password"
+                                title="Minimum 6 characters at 
+                                    least 1 Alphabet and 1 Number"
+                                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+                                required
+                            >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" 
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"></path>
+                                <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+                                <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+                            </svg>
+                        </label>
+                    </div>
+                    <button type="submit" class="my-form__button">
+                        Login
+                    </button>
+                    <div class="my-form__actions">
+                        <a href="#" title="Reset Password">
+                            Olvide mi Password
+                        </a>
+                        <a href="#" title="Create Account">
+                            Aun no tienes cuenta?
+                        </a>
+                    </div>
+                </form>
             </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+            <div class="info-side">
+                <img src="../build/img/comunal-logo.png" alt="comunal-logo" class="mockup">
             </div>
-          </div>
         </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
-
-      <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
-      </div>
-      <!-- /.social-auth-links -->
-
-      <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p>
-      <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
-      </p>
-    </div>
-    <!-- /.login-card-body -->
-  </div>
-</div>
-<!-- /.login-box -->
-
-<!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
-</body>
+        <script src="../build/js/script.js"></script>
+    </body>
 </html>
+

@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect('localhost', 'root', 'coronel7608', 'digital');
+$db = mysqli_connect('localhost', 'root', 'coronel7608', 'bd_pnp');
 
 
 if (!$db) {
